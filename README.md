@@ -1,31 +1,45 @@
 # react-side-nav-list
 A react side navlist similar to Bilibili's sidenav
-![img](https://github.com/houzisbw/react-scroll-progress/blob/master/images/example.jpg)
-
-Click the bookmark then you can reach the position of the element on page, click the 'X' button on right of scroll bar you can delete all bookmarks.
-
-The bookmark function is useful when you read a large long article, with bookmarks you can go back easily.
-
+![img](https://github.com/houzisbw/react-side-nav-list/blob/master/images/draw.gif)
+Cilck the content on side-nav will scroll the window to target element
 ## Installation
-
 ##### NPM
 ```bash
-npm install --save react-scroll-progress-with-bookmark
+npm install --save react-side-nav-list
 ```
 ##### Yarn
 ```bash
-yarn add react-scroll-progress-with-bookmark
+yarn add react-side-nav-list
 ```
-
 ## Usage
+The prop **data** is required and the format must be the list with object {id:string,content:string}, the **id** refers to the dom element's id,which helps the plugin to find target dom element,the **content** is the text word on nav list
 ```js
-import ProgressBar from 'react-scroll-progress-with-bookmark'
-<ProgressBar position="top" barColor="#df2233"/>
+import ReactSideNav from 'react-side-nav-list'
+let dataList = [
+  {
+    id:'div1',
+    content:'firstSection'
+  },
+  {
+    id:'div2',
+    content:'SecondSection'
+  },
+  {
+    id:'div3',
+    content:'ThirdSection'
+  },
+  {
+    id:'div4',
+    content:'FourthSection'
+  },
+]
+<ReactSideNav data={dataList}/>
 ```
 ## Props
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| position | string | 'top' | ProgressBar position on window('top','bottom') |
-| barColor | string | '#337fff' | Progress bar color |
-| hideAfterScroll | bool | false | if `true` the progress bar will hide after scroll |
-| timeAfterScrollToHide | number | 1000 | Interval time(ms) for hideAfterScroll |
+| position | string | 'right' | SideBar position on window('right','left') |
+| activeDistance | number | 100 | the distance to viewport top when the target dom element is active |
+| scrollTime | number | 1000 | scroll time to target dom element,milliseconds |
+| offset | number | 20 | offset of NavBar to left or right side of document |
+| customListItemStyle | object | {} | the custom style of nav-list,you can modify to your favourites's style |
