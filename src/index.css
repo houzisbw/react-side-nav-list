@@ -1,0 +1,36 @@
+.react-side-nav-wrapper{
+    position: fixed;
+    right:20px;
+    border: 1px solid #dadada;
+    top:50%;
+    transform:translateY(-50%);
+    border-radius: 5px;
+}
+.react-side-nav-wrapper ul {
+    margin: 0;
+    padding:0;
+    border-radius: 5px;
+}
+.react-side-nav-wrapper-li {
+    padding:10px;
+    color:#222222;
+    background-color: #f6f9fa;
+    list-style-type: none;
+    text-align: center;
+    cursor:pointer;
+    transition: all .3s;
+}
+.react-side-nav-li-acitve{
+    background-color: #7baeff;
+    color:#fff;
+}
+.react-side-nav-wrapper li:first-child{
+    border-radius:5px 5px 0 0;
+}
+.react-side-nav-wrapper li:last-child{
+    border-radius:0 0 5px 5px;
+}
+.react-side-nav-wrapper li:hover{
+    background-color: #7baeff;
+    color:#fff;
+}
